@@ -24,17 +24,17 @@ Python 3.6.3
 pip 9.0.1
 </pre>
 <pre>
-$ pip install django==1.11
+$ pip install Flask==1.0.2
 $
-$ python -m django --version
-1.11
+$ pip freeze
+click==6.7
+Flask==1.0.2
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+pkg-resources==0.0.0
+Werkzeug==0.14.1
 </pre>
-<pre>
-$ django-admin startproject admin
-$ cd admin/
-$ python manage.py runserver
-</pre>
-open http://127.0.0.1:8000/ with browser.
 
 ## ToDo
 
