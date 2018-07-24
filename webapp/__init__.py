@@ -1,4 +1,4 @@
-from flask import Flask, url_for, redirect, request
+from flask import Flask, url_for, redirect, request, render_template
 
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ def index():
 def list():
     """routing list
     """
-    return "TODO 本棚一覧画面を表示"
+    return render_template('list.html')
 
 
 @app.route('/add', methods=['GET', 'POST'])
@@ -26,7 +26,7 @@ def add():
     """routing add
     """
     if request.method == 'GET':
-        return "TODO 本棚追加画面を表示"
+        return render_template('add.html')
     elif request.method == 'POST':
         return "TODO 本棚情報を追加し、本棚一覧にリダイレクト"
     else:
@@ -38,7 +38,7 @@ def edit(user_id):
     """routing edit
     """
     if request.method == 'GET':
-        return "TODO 本棚編集画面を表示:%s" % user_id
+        return render_template('edit.html', user_id=user_id)
     elif request.method == 'POST':
         return "TODO 本棚情報を編集し、本棚一覧にリダイレクト:%s" % user_id
     else:
@@ -79,3 +79,8 @@ def logout():
         return "TODO ログアウトし、ログイン前トップ画面にリダイレクト"
     else:
         return "TODO エラーハンドリング"
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
