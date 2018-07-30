@@ -38,9 +38,10 @@ Werkzeug==0.14.1
 
 ## Exec
 <pre>
-
+$ flask run
 </pre>
 
-## ToDo
-
-- Dockerize
+## GAE Deploy
+<pre>
+$ gcloud app deploy
+</pre>
