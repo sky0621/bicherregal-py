@@ -38,6 +38,7 @@ Werkzeug==0.14.1
 
 ## Exec
 <pre>
+$ export FLASK_APP=main.py
 $ flask run
 </pre>
 
