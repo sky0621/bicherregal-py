@@ -7,7 +7,7 @@ app = Flask(__name__, instance_relative_config=True)
 def index():
     """routing top
     """
-    return render_template('index.html')
+    return redirect(url_for('list'))
 
 
 @app.route('/list', methods=['GET'])
